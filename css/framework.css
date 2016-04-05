@@ -1,0 +1,40 @@
+html,body { margin: 0px; width: 100%; font-family: 'PingHei';}
+@font-face {
+	font-family: 'PingHei';
+	src: url(../fonts/PingHei/PingHei-light.ttf);
+}
+.pag_fr, .pag_fr_text {
+	color: #444;
+	height: 25px;
+	font-size: 14px;
+	margin: 0px 2px;
+	line-height: 25px;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	border: 1px solid #CCC;
+	-webkit-transition:all .3s ease-in-out;
+}
+
+.pag_fr_text {
+	width: 55px;
+	border-radius: 12.5px;
+}
+
+.pag_fr {
+	width: 25px;
+	border-radius: 50%;
+}
+
+.pag_fr:hover,.pag_fr_text:hover {
+	color: #FFF;
+	background-color: #F99;
+	border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.pag_selected {
+	color: #FFF;
+	background-color: #F99;
+	border: 1px solid rgba(255, 255, 255, 0);
+}
