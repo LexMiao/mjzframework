@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>teach in lib</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/framework.css">
+</head>
+<body>
+	<div onclick="time()" class="glyphicon glyphicon-th-list" style="left: 10px; top: 10px;"></div>
+	<div onclick="time()" class="cover" id="cover"></div>
+	<div class="rightNav" id="rightDiv">
+		<div class="icon">WALLMOB</div>
+		<div class=""></div>
+		<ul class="">
+			<li class="nav_li nav_title" id="">SOLUTIONS</li><br>
+			<li class="nav_li" id="">Retail</li><br>
+			<li class="nav_li" id="">Enterprice</li><br>
+			<li class="nav_li nav_title" id="">PROBLEMS</li><br>
+			<li class="nav_li" id="">Point of Sale</li><br>
+			<li class="nav_li" id="">Mobile Payments</li><br>
+			<li class="nav_li" id="">Wallet</li><br>
+			<li class="nav_li" id="">Stand</li><br>
+			<li class="nav_li" id="">Bacoffice</li><br>
+			<li class="nav_li" id="">Business Box</li><br>
+			<li class="nav_li nav_title" id="">COMPANY</li><br>
+			<li class="nav_li" id="">About</li><br>
+			<li class="nav_li" id="">Management</li><br>
+			<li class="nav_li" id="">Board</li><br>
+			<li class="nav_li" id="">Jobs</li><br>
+			<li class="nav_li" id="">Contact</li><br>
+		</ul>
+		<div class="nav_end">
+			<span class="nav_span glyphicon glyphicon-picture"></span>
+			<span class="nav_span glyphicon glyphicon-map-marker"></span>
+			<span class="nav_span glyphicon glyphicon-tint"></span>
+			<span class="nav_span glyphicon glyphicon-play"></span>
+			<span class="nav_span glyphicon glyphicon-hdd"></span>
+		</div>
+	</div>
+	<script src="js/mjz.js"></script>
+	<script>
+		var nav = 0;
+		function time() {
+			if (nav == 0) {
+				MjFn('#rightDiv').css('right','0px');
+				MjFn('#cover').css('left','0%');
+				nav = 1;
+			} else {
+				MjFn('#rightDiv').css('right','-300px');
+				MjFn('#cover').css('left','100%');
+				nav = 0;
+			}
+		}
+
+		$('#idName').css('hkjhkjh','#111');
+
+
+		$('#idName').css({
+			'':'',
+			'':'',
+		});
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>
