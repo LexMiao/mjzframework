@@ -9,7 +9,7 @@
 
 >remove/getClass/ele_W_H/body_W_H/click／pagination/Time、arrChan、strChan、obj、对象下的方法／和抛错方法
 
-引入本框架只运用一个全局变量：MjFn变量，在变量内有的原型方法内挂载着所有的操作方法。并且运用无new创建，因此，如果要使用，请在<script>标签内嵌入以下的代码：
+引入本框架只运用一个全局变量：MjFn变量，在变量内有的原型方法内挂载着所有的操作方法。并且运用无new创建，因此，如果要使用，请在\<script\>标签内嵌入以下的代码：
 
 ```
 MjFn('.className');       //example,括号内的内容是css选择器的格式
