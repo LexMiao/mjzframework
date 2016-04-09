@@ -354,16 +354,88 @@ if (!MjFn) MjFn = { };
 				
 			},
 
-			//
-			toArr: function(JSON, commas) {
+			//JSON TO OBJ
+			toArr: function(JSON, commas, join) {
 				var arr = [];
 				for (ele in JSON) {
 					if (JSON.hasOwnProperty(ele)) {
-						arr.push(cssStyle+commas+JSON[ele]);
+						arr.push(commas+join+JSON[ele]);
 					}
 				}
 				return arr;
 			},
+		},
+
+		//ajax request factory
+		ajax: function(URL, method, fn, data) {
+			var request = this.data.xmlhttp();
+			this.data.open(request, URL, method, data);
+			this.data.AjaxCallback(request, fn);
+			request = null;
+		},
+
+		data: {
+
+			//new a ajax request,support IE5, IE6, IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp: function() {
+				if (window.XMLHttpRequest) {
+					return new XMLHttpRequest();
+				} else {
+					return new new ActiveXObject("Microsoft.XMLHTTP");
+				}
+			},
+
+			//open and send data
+			open: function(request, URL, method, data) {
+				method = this.MSureGANDP(method);
+				request.open(method, URL, true);
+				if (method == 'POST') {
+					data = this.JsontoStr(data);
+					request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+					request.send(data);
+				} else {
+					request.send();
+				}
+			},
+
+			//return data and have function to execequte
+			AjaxCallback: function(request, fn) {
+				request.onreadystatechange = function() {
+					if (request.readyState === 4) {
+						if (request.status === 200) {
+							fn.call(this, request.responseText);
+						} else {
+							fn.error.cell(this, request.status);
+						}
+					}
+				}
+			},
+
+			//handle if there are post & get,and turn it to UpperCae
+			MSureGANDP: function(method) {
+				if (method.match(/^(get|post)$/i)) {
+					return method.toUpperCase();
+				} else {
+					return false;
+					console.error('Error Method, please use GET and POST');
+				}
+			},
+
+			//JSON to str,only use in ajax request
+			JsontoStr: function(data) {
+				var reqData = '';
+				if (typeof data === 'object') {
+					for (ele in data) {
+						if (data.hasOwnProperty(ele)) {
+							reqData += '&'+ele+'='+data[ele];
+						}
+					}
+					return reqData;
+				} else {
+					console.error('You must use object');
+				}
+			},
+
 		},
 
 		/**

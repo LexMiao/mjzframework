@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>teach in lib</title>
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
 	<link rel="stylesheet" href="css/framework.css">
 </head>
 <body>
@@ -52,24 +52,17 @@
 				nav = 0;
 			}
 		}
+		var json = {
+			name: '123',
+			get: '456',
+		};
+		MjFn().ajax('http://localhost:8080/ajax/server1.php', 'post', function(data) {
+			console.log(data);
 
-		$('#idName').css('hkjhkjh','#111');
-
-
-		$('#idName').css({
-			'':'',
-			'':'',
+		}, {
+			'POSTval': 'val',
 		});
-
-
-
-
-
-
-
-
-
-
+		
 	</script>
 </body>
 </html>
