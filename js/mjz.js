@@ -1,7 +1,7 @@
 /*
  *Framework Created By merjiezo
  *Copyright 2016, 2016 MjFn Foundation, Inc.
- *Framework version: 0.0.4
+ *Framework version: 0.1.0
  *Remind to the user: 
  *	1.only used in font, not in node.js
  *	2.Only one outside Interface:MjFn
@@ -496,15 +496,18 @@ if (!MjFn) MjFn = { };
 			second: 5000,
 		},
 
+
 		carouselPic: function(allPic, sec) {
 			this.carouselParam.nowPic = allPic;
 			this.carouselParam.second = sec;
 		},
 
+		//if there is wrong
 		debug: function(error, func) {
 			console.error(this.debugHook[error]+ ' -> FRAMEWORK FUNCTION :: ' + func);
 		},
 
+		//the debug hook
 		debugHook: {
 			error100: 'UnKnown Type in the javascript, you must be god!',
 			error101: 'Out of the document Num!',
@@ -514,8 +517,10 @@ if (!MjFn) MjFn = { };
 			error105: 'Empty Value or undefined',
 		},
 
+		//all type
 		typeHook: ['array', 'string', 'number', 'boolean', 'function', 'object', 'undefined', 'null'],
 
+		//type test
 		typeHandle: function(content, target) {
 			var way = typeof content;
 			if (way === target) {
@@ -527,34 +532,3 @@ if (!MjFn) MjFn = { };
 	}
 
 })(document, window);
-
-
-
-
-function obj2str(o){   
-
-    var r = [];   
-
-    if(typeof o =="string") 
-    	return "\""+o.replace(/([\'\"\\])/g,"\\$1").replace(/(\n)/g,"\\n").replace(/(\r)/g,"\\r").replace(/(\t)/g,"\\t")+"\"";   
-
-    if(typeof o =="undefined") 
-    	return "";   
-
-    if(typeof o == "object"){   
-        if(o===null) {
-        	return "null";   
-        } else if(!o.sort){
-            for(var i in o)   
-                r.push(i+":"+obj2str(o[i]))
-             	r="{"+r.join()+"}"  
-         }else{   
-            for(var i =0;i<o.length;i++)   
-                r.push(obj2str(o[i]))   
-            	r="["+r.join()+"]"  
-         }   
-        return r;   
-    }   
-    return o.toString();   
-
-}
