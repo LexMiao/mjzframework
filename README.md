@@ -99,3 +99,14 @@ pagination方法：传入URL、本页页数、总页数(>7页显示7页，<7页�
 ```
 MjFn('#page').pagination('URL', 5, 12);     //下面附图，配合framework.css工作效果更佳！
 ```
+
+ajax方法(传入json参数、URL地址)：
+
+```
+MjFn().ajax('http://localhost:8080/ajax/server1.php', 'post', function(data) {
+    console.log(data);
+}, {
+    'POSTval': 'val',
+});
+```
+

@@ -240,7 +240,30 @@ if (!MjFn) MjFn = { };
 			return this;
 		},
 
-		click: function(func) {c
+		hide: function() {
+			this.each(function(el) {
+				this.addAttr('hidden', 'hidden', el);
+			});
+			return this;
+		},
+
+		show: function() {
+			this.each(function(el) {
+				this.removeAttr('hidden', el);
+			});
+		},
+
+		removeAttr: function(Attr, el) {
+			if (el.hasAttribute(Attr)) {
+				el.removeAttribute(Attr);
+			}
+		},
+
+		addAttr: function(Attr, val, el) {
+			el.setAttribute(Attr, val);
+		},
+
+		click: function(func) {
 			this.each(function(el) {
 				el.addEventListener('click', function(e){
 					func.call(this, e);
@@ -354,7 +377,7 @@ if (!MjFn) MjFn = { };
 				
 			},
 
-			//JSON TO OBJ
+			//JSON TO Arr
 			toArr: function(JSON, commas, join) {
 				var arr = [];
 				for (ele in JSON) {

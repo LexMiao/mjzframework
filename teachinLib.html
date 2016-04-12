@@ -3,12 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>teach in lib</title>
-	<!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/framework.css">
 </head>
 <body>
 	<div onclick="time()" class="glyphicon glyphicon-th-list" style="left: 10px; top: 10px;"></div>
 	<div onclick="time()" class="cover" id="cover"></div>
+	<br><br><br>
+	<div class="qwe"></div><br>
+	<div class="qwe"></div>
 	<div class="rightNav" id="rightDiv">
 		<div class="icon">WALLMOB</div>
 		<div class=""></div>
@@ -40,28 +43,20 @@
 	</div>
 	<script src="js/mjz.js"></script>
 	<script>
+		MjFn('.qwe').hide();
+		MjFn('.qwe').show();
 		var nav = 0;
 		function time() {
-			if (nav == 0) {
-				MjFn('#rightDiv').css('right','0px');
-				MjFn('#cover').css('left','0%');
-				nav = 1;
+			if (document.getElementsByClassName('qwe')[0].hasAttribute('hidden')) {
+				MjFn('.qwe').show();
 			} else {
-				MjFn('#rightDiv').css('right','-300px');
-				MjFn('#cover').css('left','100%');
-				nav = 0;
+				MjFn('.qwe').hide();
 			}
 		}
 		var json = {
 			name: '123',
 			get: '456',
 		};
-		MjFn().ajax('http://localhost:8080/ajax/server1.php', 'post', function(data) {
-			console.log(data);
-
-		}, {
-			'POSTval': 'val',
-		});
 		
 	</script>
 </body>
